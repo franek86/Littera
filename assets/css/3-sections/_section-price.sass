@@ -1,0 +1,111 @@
+section#price
+  background:
+    image: url(../images/price-bg.jpg)
+    repeat: repeat-x
+    size: cover
+    position: top center
+    attachment: fixed
+  padding-bottom: 130px
+
+  h2
+    color: white
+
+  &.price-section
+    overflow-x: hidden
+
+    .price-belt
+      width: 200%
+      position: relative
+      left: 0%
+      +transition($transition-ninesec)
+
+      .price-wrap
+        width: 50%
+        float: left
+
+        .price-container
+          max-width: 960px
+          +display(flex)
+          +flex-direction(row)
+          +justify-content(space-between)
+          margin: 100px auto 0
+
+          @media only screen and (max-width: 740px)
+            .price-container
+              margin: 50px auto 0
+
+          .circle
+            display: inline-block
+            +size(215px)
+            background:
+              color: rgba(255,255,255,0.9)
+            margin-right: 2%
+            border: 5px solid $primary-color
+            -webkit-border-radius: 50%
+            border-radius: 50%
+            -webkit-box-shadow: 0 0 30px 15px rgba(0,0,0,0.2)
+            box-shadow: 0 0 30px 15px rgba(0,0,0,0.2)
+
+
+            &:last-child
+              margin-right: 0
+
+            .circle-content
+              text-align: center
+              padding-top: 26%
+
+              h5
+                font-size: 18px
+                color: #323232
+                text-transform: uppercase
+
+              p
+                margin: 0
+
+              .price-label
+                font-weight: 900
+
+        @media only screen and (max-width: 980px)
+          .price-container
+            display: block
+            text-align: center
+
+            .circle
+              margin-bottom: 30px
+
+              //&:last-child
+                margin-bottom: 0px
+
+      .offer-wrap
+        width: 48%
+        float: left
+        margin: 0 1%
+
+        .offer-price
+          display: none
+          position: relative
+          margin-top: 80px
+          padding: 20px
+          background:
+            color: rgba(255,255,255,0.9)
+          border: 5px solid $primary-color
+          -webkit-border-radius: 10px
+          border-radius: 10px
+
+          h4
+            margin-left: 45px
+            color: $primary-color
+            text-transform: uppercase
+
+          .back
+            +size(40px)
+            position: absolute
+            top: 23px
+            right: 0
+            bottom: 0
+            left: 15px
+            opacity: 0.5
+            cursor: pointer
+
+            &:hover
+              opacity: 1

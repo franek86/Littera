@@ -1,0 +1,42 @@
+.about-container
+  max-width: 780px
+  margin: 0 auto
+  padding: 50px 20px
+  text-align: center
+
+  p
+    font:
+      size: 16px
+
+  .about-list
+    display: inline-block
+    text-align: center
+
+    li
+      +display(flex)
+      +flex-direction(row)
+      margin-bottom: 50px
+
+      img
+        width: 28px
+        height: 21px
+        border: 2px solid $primary-color
+        border-radius: 10px
+        -web-kit-border-radius: 10px
+        padding: 22px
+
+      p
+        margin: 20px
+        color: $primary-color
+        font-size: 20px
+        text-align: justify
+        text-transform: uppercase
+
+      @media only screen and (min-width: 0) and (max-width: 360px)
+        img
+          +size(auto)
+          padding: 10px
+
+        p
+          font-size: 16px
+          margin: 12px

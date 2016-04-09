@@ -1,0 +1,90 @@
+section#team
+  position: relative
+  background:
+    image: url(../images/line.png)
+    repeat: repeat
+    position: center
+    attachment: fixed
+  padding-bottom: 100px
+
+  .team-container
+    max-width: 852px
+    +display(flex)
+    +flex-direction(row)
+    margin: 50px auto
+
+    .team-circle
+      display: inline-block
+      +size(200px)
+      position: relative
+      margin-right: 2%
+      border-radius: 50%
+      -webkit-border-radius: 50%
+      +transform(scale(1))
+
+      &:last-child
+        margin-right: 0
+
+      &:after
+        content: ""
+        position: absolute
+        +size(100%)
+        border-radius: 50%
+        box-sizing: content-box
+        box-shadow: 0 0 0 4px #00b86e
+        top: -7px
+        left: -7px
+        padding: 7px
+        +transform(scale(0.8))
+        +transition(transform 0.2s, opacity 0.2s)
+        opacity: 0
+
+      img
+        width: 100%
+
+      .team-overlay
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        +display(flex)
+        +justify-content(center)
+        +align-content(center)
+        background: rgba(100, 100, 100, 0.34)
+        border-radius: 100%
+        -webkit-border-radius: 100%
+        +transition(background 0.6s ease)
+
+        .name
+          line-height: 14
+          color: rgba(233, 251, 244, 1)
+          text-align: center
+
+    .team-circle:hover .team-overlay
+      background:
+        color: rgba(50,50,50,0.9)
+
+    .team-circle:hover .name
+      color: $primary-color
+      +transform(scale(1.3))
+
+    .team-circle:hover::after
+      +transform(scale(1))
+      opacity: 1
+
+  @media only screen and (max-width: 460px)
+    .team-circle
+      +size(280px)
+      margin: 0 auto
+
+  @media only screen and (max-width: 960px)
+    .team-container
+      display: block
+      text-align: center
+
+      .team-circle
+        margin-bottom: 0px
+
+        &:last-child
+          margin-bottom: 0

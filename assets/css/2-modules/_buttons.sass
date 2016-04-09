@@ -1,0 +1,115 @@
+.welcome-cta
+  display: block
+  position: relative
+  padding: 7% 11%
+  background:
+    color: $primary-color
+  border: 1px solid white
+  border-radius: 10px
+  -webkit-border-radius: 10px
+  -mozkit-border-radius: 10px
+  +transition($transition-foursec)
+  overflow: hidden
+
+  &:before
+    font-family: FontAwesome
+    content: "\f1d8"
+    +size(100%)
+    position: absolute
+    top: 0
+    left: -100%
+    font-size: 200%
+    line-height: 2.9
+    color: white
+    border-radius: 10px
+    -webkit-border-radius: 10px
+    -mozkit-border-radius: 10px
+    +transition($transition-foursec)
+
+  &:hover,
+  &:focus
+    color: white
+    background:
+      color: #008550
+
+  span
+    display: inline-block
+    +size(100%)
+    color: white
+    font:
+      size: 1.8em
+    line-height: 1
+    text-transform: uppercase
+    +transition($transition-foursec)
+
+
+.welcome-cta:hover::before
+  left: 0
+
+.welcome-cta:hover span
+  +transform(translateX(200%))
+
+@media only screen and (min-width: 0px) and (max-width: 740px)
+  .welcome-cta
+    &:before
+      font-size: 150%
+      line-height: 2.5
+
+  .welcome-cta span
+    font:
+      size: 1.2em
+
+/* -----------Landscape iPhone5 and 5s ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)
+  .welcome-cta
+    margin-top: 1em
+    font-size: 1em
+
+.btn-more
+  display: inline-block
+  padding: 5px 25px
+  line-height: 1.5
+  margin-top: 20px
+  color: $primary-color
+  font-size: 12px
+  text-transform: uppercase
+  border: 1px solid $primary-color
+  -webkit-border-radius: 4px
+  border-radius: 4px
+  +transition(background 0.4s linear)
+  outline: none
+
+  &:hover,
+  &.focus
+    background:
+      color: $primary-color
+    color: white
+    border: none
+
+.btn-choose
+  color: $primary-color
+  border-color: $primary-color
+
+  &:hover,
+  &:focus
+    background:
+      color: $primary-color
+    color: white
+    border-color: none
+    outline: none
+
+.btn-submit
+  height: 48px
+  padding: 0 40px
+  background:
+    color: white
+  color: $primary-color
+  font-size: 16px
+  border: none
+  +transition(all 0.25s ease)
+
+  &:hover
+    background:
+      color: #33E89F
+    color: white
+    border: none

@@ -1,0 +1,35 @@
+section#services
+  background:
+    color: white
+  padding-bottom: 80px
+
+  .service-box
+    h4
+      color: #323232
+      margin-left: 50px
+
+    p
+      padding: 0 5px
+      text-align: justify
+
+    .icon-sprite
+      display: inline-block
+      +size(30px)
+      background:
+        image: url(../images/icon-sprite.png)
+        repeat: no-repeat
+        position: top left
+      position: relative
+      top: 40px
+
+      &.icon-gear
+        background:
+          position: -30px top
+
+      &.icon-coins
+        background:
+          position: -60px top
+
+      &.icon-institut
+        background:
+          position: -90px top

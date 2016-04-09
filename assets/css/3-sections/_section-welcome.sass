@@ -1,0 +1,282 @@
+.mobile-nav
+  position: fixed
+  width: 100%
+  //height: 100vh
+  padding: 55px 0 27px
+  background: rgba(36, 36, 36, 0.95)
+  +transform(translateY(-100%))
+  +transition(transform 1.8s ease-in-out)
+  z-index: 1
+
+  ul
+    li
+      text-align: center
+      margin-bottom: 10px
+
+      a
+        position: relative
+        display: block
+        width: 150px
+        margin: 0 auto
+        padding: 0 10px
+        line-height: 3.5
+        font:
+          size: 20px
+          weight: bold
+        color: white
+        border: 3px solid white
+        border-radius: 4px
+        -webkit-border-radius: 4px
+        text-transform: uppercase
+        overflow: hidden
+
+        &:after
+          content: ""
+          position: absolute
+          +size(100%)
+          top: 0
+          left: -100%
+          background: rgba(0, 184, 110, 0.39)
+          +transition($transition-foursec)
+
+        &:hover::after
+          left: 0
+
+
+@media only screen and (max-width: 740px)
+  .mobile-nav.is-open
+    display: block
+    +transform(translateY(0%))
+
+section#section-welcome
+  position: relative
+  height: 100vh
+  background:
+    image: url(../images/welcome-bg.jpg)
+    position: center center
+    size: cover
+    repeat: no-repeat
+    attachment: fixed
+  overflow: hidden
+
+  .overlay
+    height: 100%
+    position: absolute
+    top: 0
+    right: 0
+    border: 0
+    left: 0
+    background:
+      color: rgba(0,52,6,0.4)
+
+  header
+    +display(flex)
+    +flex-direction(row)
+    +justify-content(space-between)
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100px
+    z-index: 1
+
+
+    &.scrolled
+      +display(flex)
+      +flex-direction(row)
+      +justify-content(space-between)
+      height: 50px
+      background:
+        color: white
+      +transition-delay(0ms)
+
+    .logo
+      +hide-text
+      display: block
+      +size(85px)
+      background:
+        image: url(../images/logo.png)
+        position: top left
+        repeat: no-repeat
+      margin: 10px
+
+      &.logo-sm
+        display: block
+        +size(40px)
+        background:
+          image: url(../images/logo-sm.png)
+          position: top left
+        margin: 5px
+
+
+    .main-nav
+      ul
+        li
+          display: inline-block
+
+        a
+          display: block
+          padding: 0 25px
+          font:
+            size: 1.2em
+            weight: 700
+          line-height: 100px
+          text-transform: uppercase
+          color: $primary-color
+          +transition($transition-foursec)
+
+          &:hover
+            background:
+              color: $primary-color
+            color: white
+
+
+    //mobile-nav-toggle
+    .mobile-nav-toggle
+      display: none
+      width: 30px
+      height: 40px
+      margin: 10px
+      align-items: center
+      cursor: pointer
+
+      span,
+      span:before,
+      span:after
+        content: ""
+        position: relative
+        display: block
+        height: 2px
+        width: 100%
+        background:
+          color: $primary-color
+        +transition($transition-foursec)
+
+      span:before
+        top: 12px
+
+      span:after
+        top: -14px
+
+      &.is-open span
+        background: transparent
+
+      &.is-open span:before,
+      &.is-open span:after
+        +transform-origin(center)
+        +transform(rotate(180deg))
+        top: 0
+
+      &.is-open span:before
+        +transform(rotate(90deg))
+
+  @media only screen and (max-width: 740px)
+    header
+      height: auto
+
+      .logo
+        display: block
+        +size(40px)
+        background:
+          image: url(../images/logo-sm.svg)
+          position: top left
+        margin: 5px
+
+      .main-nav
+        display: none
+
+      .mobile-nav-toggle
+        +display(flex)
+
+  // Tagline container
+  .intro-tagline-container
+    position: absolute
+    width: 100%
+    margin: 0 auto
+    top: 31%
+    left: 50%
+    text-align: center
+    +transform(translateX(-50%))
+
+
+    .tagline1
+      margin-bottom: 3%
+
+      span
+        display: inline
+        margin: 0 1em 0 0
+        font:
+          size: 3.5em
+          weight: 700
+        line-height: 1
+        letter-spacing: 2px
+        color: white
+        text-transform: uppercase
+
+        &:last-child
+          margin-right: 0
+
+    .tagline2
+      font:
+        size: 2em
+      color: white
+      line-height: 1.4
+      letter-spacing: 1px
+
+    .intro-link
+      max-width: 25%
+      margin: 4em auto 0 auto
+      text-align: center
+
+  @media only screen and (max-width: 740px)
+    .intro-tagline-container
+      width: auto
+      top: 25%
+
+      .tagline1
+        margin-bottom: 4%
+
+      .tagline1 span
+        display: block
+        margin: 0 0 10px 0
+
+      .intro-link
+        max-width: 75%
+
+  @media only screen and (min-width: 0px) and (max-width: 480px)
+    .intro-tagline-container
+      .tagline1 span
+        font-size: 1.85em
+
+      .tagline2
+        font-size: 1.5em
+
+  /* ----------- landscape iPhone 5 and 5S ----------- */
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)
+    .intro-tagline-container
+      .tagline1 span
+        font-size: 1.5em
+
+      .tagline2
+        font-size: 1.1em
+
+      .intro-link
+        margin-top: 1em
+
+  /* -----------Landscape iPhone 6 ----------- */
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)
+    .intro-tagline-container
+      top: 24%
+
+      .intro-tagline
+        width: 100%
+
+        .tagline1 span
+          display: inline
+          font-size: 1.7em
+
+        .tagline2
+          font-size: 1.5em
+
+      .intro-link
+        margin-top: 1em

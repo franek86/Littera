@@ -1,0 +1,62 @@
+section#contact
+  background:
+    color: $primary-color
+
+  .contact-info
+    h4
+      color: white
+      margin-bottom: 50px
+      text-transform: uppercase
+
+    a
+      display: inline-block
+      padding-bottom: 20px
+      font-size: 18px
+      color: white
+
+      &:hover
+        color: #54F7B5
+
+      i
+        padding-right: 15px
+
+    .google-map
+      display: inline-block
+      text-align: center
+
+      p
+        font-size: 24px
+        color: white
+        padding-bottom: 5px
+        border-bottom: 3px solid white
+
+  #conatact-form
+    input[type="email"],
+    input[type="text"],
+    input[type="tel"]
+      display: block
+      width: 100%
+      padding: 27px
+      color: $primary-color
+      outline: none
+      +placeholder
+        color: $primary-color
+        text-align: center
+        text-transform: uppercase
+
+    textarea
+      display: block
+      width: 100%
+      min-height: 250px
+      outline: none
+      +placeholder
+        color: $primary-color
+        text-align: center
+        text-transform: uppercase
+
+  @media only screen and (max-width: 550px)
+    .contact-info
+      text-align: center
+
+    #conatact-form
+      margin-top: 40px
