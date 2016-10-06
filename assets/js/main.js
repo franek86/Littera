@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 
   toggleMenu();
   smoothScroll(300);
