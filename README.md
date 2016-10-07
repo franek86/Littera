@@ -1,4 +1,4 @@
 # Littera
 Landing webpage with html5,SASS,jquery-exercise
 
-Please use it in MAMP
+http://franek86.github.io/Littera/
